@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sudo Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo-container">
+            <img src="https://cdn.discordapp.com/attachments/1063697246731894825/1424825005404983398/Untitled4_20250927155743.png?ex=68e55b31&is=68e409b1&hm=ebb8517af56272ffb46cf22b139b1f6f2ae8effe3d87a1aa5e2e86289a3b5e6d&" alt="Logo Sudo Web" class="logo-img">
+            <span class="logo-text">Sudo Web</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Portfolio -->
+    <section class="portfolio">
+        <h2>Portfolio Kami</h2>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <img src="https://cdn.discordapp.com/attachments/1063697246731894825/1424815605688569876/Untitled5_20250927160237.png?ex=68e55270&is=68e400f0&hm=d4b9f0ee04c70c24f17781070dba1cde30378b78e96281ded896fb58994ec44d&" alt="Website 1" class="portfolio-img">
+                <h3>Website UMKM Makanan</h3>
+                <p>Website landing page untuk UMKM kuliner lokal dengan fitur gallery dan tombol pesan WhatsApp.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.discordapp.com/attachments/1063697246731894825/1424815605688569876/Untitled5_20250927160237.png?ex=68e55270&is=68e400f0&hm=d4b9f0ee04c70c24f17781070dba1cde30378b78e96281ded896fb58994ec44d&" alt="Website 2" class="portfolio-img">
+                <h3>Website Personal Brand</h3>
+                <p>Website portfolio pribadi untuk konsultan digital dengan desain modern dan SEO-friendly.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.discordapp.com/attachments/1063697246731894825/1424815605688569876/Untitled5_20250927160237.png?ex=68e55270&is=68e400f0&hm=d4b9f0ee04c70c24f17781070dba1cde30378b78e96281ded896fb58994ec44d&" alt="Website 3" class="portfolio-img">
+                <h3>Website Startup</h3>
+                <p>Landing page untuk startup teknologi dengan fitur interaktif dan integrasi media sosial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>Sudo Web</strong></p>
+            <p>Jasa buat website landing page untuk UMKM, personal branding, dan bisnis kamu.</p>
+            <p>Website: <a href="https://sudoweb.my.id" target="_blank" style="color:#9ca3af;">sudoweb.my.id</a></p>
+            <p>WhatsApp: 0 (sementara)</p>
+            <p>&copy; 2025 Sudo Web. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("active");
+        }
+
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+            if (link.textContent === 'About Us') {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('mobileMenu').classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
