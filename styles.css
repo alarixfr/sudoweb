@@ -51,7 +51,7 @@ nav {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: #000;
 }
 
@@ -147,15 +147,16 @@ nav {
 .popular-badge {
     background: linear-gradient(135deg, #FF6B00, #FF9E44);
     color: white;
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
     font-weight: bold;
     position: absolute;
-    top: -15px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(255, 107, 0, 0.3);
+    width: fit-content;
 }
 
 /* Premium Border */
@@ -269,6 +270,8 @@ nav {
     margin-top: 15px;
     display: inline-block;
     transition: background 0.3s;
+    width: 100%;
+    text-align: center;
 }
 
 .whatsapp-btn-green:hover {
@@ -278,7 +281,7 @@ nav {
 /* Portfolio Link */
 .portfolio-link {
     text-align: center;
-    margin: 60px 0;
+    margin: 30px 0 60px;
 }
 
 .portfolio-link a {
@@ -290,6 +293,8 @@ nav {
     font-weight: 600;
     display: inline-block;
     transition: background 0.3s;
+    width: 100%;
+    max-width: 300px;
 }
 
 .portfolio-link a:hover {
@@ -345,69 +350,6 @@ nav {
     color: #4b5563;
 }
 
-/* Footer */
-footer {
-    background-color: #1f2937;
-    color: white;
-    padding: 50px 20px 30px;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content p {
-    margin: 10px 0;
-    color: #d1d5db;
-}
-
-.footer-content strong {
-    color: white;
-}
-
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 20px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .header h1 {
-        font-size: 2.2rem;
-    }
-
-    .header p {
-        font-size: 1.1rem;
-    }
-
-    .packages {
-        flex-direction: column;
-        align-items: stretch; /* Agar boks paket rata tengah di mobile */
-    }
-
-    .package {
-        width: 100%; /* Lebar penuh di mobile */
-        max-width: 400px; /* Agar tidak terlalu lebar */
-        margin: 0 auto 30px; /* Jarak antar boks */
-    }
-
-    .produk h2, .faq h2, .about-us h2 {
-        font-size: 2rem;
-    }
-
-    .about-us img {
-        max-width: 100%; /* Tetap responsif di mobile */
-    }
-}
-
 /* Portfolio */
 .portfolio {
     padding: 100px 20px;
@@ -454,4 +396,97 @@ footer {
     font-size: 1rem;
     color: #4b5563;
     line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 50px 20px 100px; /* Tambahkan padding bawah agar tidak tertutup sticky box */
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 10px 0;
+    color: #d1d5db;
+}
+
+.footer-content strong {
+    color: white;
+}
+
+/* Sticky WhatsApp Box */
+.sticky-whatsapp {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #25D366;
+    color: white;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.sticky-whatsapp:hover {
+    background-color: #128C7E;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .header p {
+        font-size: 1.1rem;
+    }
+
+    .packages {
+        flex-direction: column;
+        align-items: stretch; /* Agar boks paket rata tengah di mobile */
+    }
+
+    .package {
+        width: 100%; /* Lebar penuh di mobile */
+        max-width: 400px; /* Agar tidak terlalu lebar */
+        margin: 0 auto 30px; /* Jarak antar boks */
+    }
+
+    .produk h2, .faq h2, .about-us h2 {
+        font-size: 2rem;
+    }
+
+    .about-us img {
+        max-width: 100%; /* Tetap responsif di mobile */
+    }
+
+    .sticky-whatsapp {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
 }
